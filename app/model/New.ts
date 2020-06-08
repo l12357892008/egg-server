@@ -11,9 +11,7 @@ export default (app: Application) => {
   // });
   const Scheme = mongoose.Schema;
   const ss = new Scheme({
-    ss: {
-      type: String,
-    },
+    ss: String,
     createdAt: {
       type: Number,
       default: Date.now(),

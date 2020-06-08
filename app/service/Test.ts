@@ -12,15 +12,26 @@ export default class Test extends Service {
   public async sayHi(name: string) {
     const { ctx } = this;
     const data = ctx.model.New;
-    const aa = await data.create({
-      ss: `hi,${name}`,
-    });
-    const bb = await data.find();
+    // const aa = await data.create({ // 添加一条数据
+    //   ss: `hi,${name}`,
+    // });
+    // const bb = await data.find(); // 获取表中所有数据
+    const cc = await data.find({ ss: /^bbb/ }); // 查找ss为bbb开头的数据
     return {
       code: 0,
       msg: `hi,${name}`,
-      v: aa,
-      a: bb,
+      // aa,
+      // bb,
+      cc,
+      power: [{
+        path: '/wu',
+        name: 'wu',
+      },
+      {
+        path: '/hel',
+        name: 'hel',
+      },
+      ],
     };
   }
 }
